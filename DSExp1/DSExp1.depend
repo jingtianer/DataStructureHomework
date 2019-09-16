@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1568624691 source:c:\users\user\desktop\dsexp1\main.cpp
+	"TestSettings.h"
+
+1568624762 c:\users\user\desktop\dsexp1\testsettings.h
+	<iostream>
+	<fstream>
+	"SqList.h"
+	"LinkList.h"
+	"CycleLinkList.h"
+	"DuLinkList.h"
+	"StaticLinkList.h"
+
+1568523695 c:\users\user\desktop\dsexp1\sqlist.h
+	"List.h"
+
+1568624751 c:\users\user\desktop\dsexp1\list.h
+	<cstdlib>
+	<functional>
+	<iostream>
+
+1568567159 c:\users\user\desktop\dsexp1\linklist.h
+	"List.h"
+	"LNode.h"
+	<vector>
+
+1568451293 c:\users\user\desktop\dsexp1\lnode.h
+
+1568522830 c:\users\user\desktop\dsexp1\cyclelinklist.h
+	"List.h"
+	"LNode.h"
+
+1568624406 c:\users\user\desktop\dsexp1\dulinklist.h
+	"DuLNode.h"
+	"List.h"
+
+1568474086 c:\users\user\desktop\dsexp1\dulnode.h
+
+1568560416 c:\users\user\desktop\dsexp1\staticlinklist.h
+	"List.h"
+	"StaticLNode.h"
+
+1568542611 c:\users\user\desktop\dsexp1\staticlnode.h
+
+1568630944 source:e:\programming\东秦\dsexp\dsexp1\main.cpp
+	"TestSettings.h"
+
+1568624764 e:\programming\东秦\dsexp\dsexp1\testsettings.h
+	<iostream>
+	<fstream>
+	"SqList.h"
+	"LinkList.h"
+	"CycleLinkList.h"
+	"DuLinkList.h"
+	"StaticLinkList.h"
+
+1568523696 e:\programming\东秦\dsexp\dsexp1\sqlist.h
+	"List.h"
+
+1568631030 e:\programming\东秦\dsexp\dsexp1\list.h
+	<cstdlib>
+	<functional>
+	<iostream>
+
+1568630968 e:\programming\东秦\dsexp\dsexp1\linklist.h
+	"List.h"
+	"LNode.h"
+	<vector>
+
+1568451294 e:\programming\东秦\dsexp\dsexp1\lnode.h
+
+1568626980 e:\programming\东秦\dsexp\dsexp1\cyclelinklist.h
+	"List.h"
+	"LNode.h"
+
+1568624408 e:\programming\东秦\dsexp\dsexp1\dulinklist.h
+	"DuLNode.h"
+	"List.h"
+
+1568474088 e:\programming\东秦\dsexp\dsexp1\dulnode.h
+
+1568560418 e:\programming\东秦\dsexp\dsexp1\staticlinklist.h
+	"List.h"
+	"StaticLNode.h"
+
+1568542612 e:\programming\东秦\dsexp\dsexp1\staticlnode.h
+
