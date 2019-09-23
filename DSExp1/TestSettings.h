@@ -7,6 +7,8 @@
 #include "CycleLinkList.h"
 #include "DuLinkList.h"
 #include "StaticLinkList.h"
+#include "SqStack.h"
+#include<sstream>
 using namespace std;
 streambuf* coutBuf = nullptr;
 ofstream * of = nullptr;

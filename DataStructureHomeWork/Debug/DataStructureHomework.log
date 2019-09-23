@@ -1,0 +1,3 @@
+﻿  Main.cpp
+E:\programming\东秦\DSExp\DataStructureHomework\Main.cpp(125,20): warning C4114:  多次使用同一类型限定符
+  DataStructureHomework.vcxproj -> E:\programming\东秦\DSExp\DataStructureHomework\Debug\DataStructureHomework.exe

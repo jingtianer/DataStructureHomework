@@ -6,10 +6,6 @@
 static const int StackInitSize = 100;
 static const int StackIncreasement = 10;
 
-const auto print_all = [](int x) { std::cout << x << " "; };
-const auto equals = [](int i, int j)-> bool { return i == j; };
-const auto Greater = [](int i, int j) -> bool { return i > j; };
-const auto Smaller = [](int i, int j) -> bool { return i < j; };
 
 template<class T>
 class Stack

@@ -85,3 +85,55 @@
 
 1568542612 e:\programming\¶«ÇØ\dsexp\dsexp1\staticlnode.h
 
+1569248406 source:c:\users\tt\desktop\dsexp1\main.cpp
+	"TestSettings.h"
+
+1569247909 c:\users\tt\desktop\dsexp1\testsettings.h
+	<iostream>
+	<fstream>
+	"SqList.h"
+	"LinkList.h"
+	"CycleLinkList.h"
+	"DuLinkList.h"
+	"StaticLinkList.h"
+	"SqStack.h"
+	<sstream>
+
+1568580932 c:\users\tt\desktop\dsexp1\sqlist.h
+	"List.h"
+
+1568580932 c:\users\tt\desktop\dsexp1\list.h
+	<cstdlib>
+	<functional>
+	<iostream>
+
+1568580932 c:\users\tt\desktop\dsexp1\linklist.h
+	"List.h"
+	"LNode.h"
+	<vector>
+
+1568580932 c:\users\tt\desktop\dsexp1\lnode.h
+
+1568580932 c:\users\tt\desktop\dsexp1\cyclelinklist.h
+	"List.h"
+	"LNode.h"
+
+1568580932 c:\users\tt\desktop\dsexp1\dulinklist.h
+	"DuLNode.h"
+	"List.h"
+
+1568580932 c:\users\tt\desktop\dsexp1\dulnode.h
+
+1568580932 c:\users\tt\desktop\dsexp1\staticlinklist.h
+	"List.h"
+	"StaticLNode.h"
+
+1568580932 c:\users\tt\desktop\dsexp1\staticlnode.h
+
+1568580932 c:\users\tt\desktop\dsexp1\sqstack.h
+	"Stack.h"
+
+1569228488 c:\users\tt\desktop\dsexp1\stack.h
+	<functional>
+	<iostream>
+
