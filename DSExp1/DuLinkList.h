@@ -11,6 +11,9 @@ public:
 	{
 		DuLinkList<T>::InitList();
 	}
+	void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	void InitList()
 	{
 		head = new DuLNode<T>(nullptr);
@@ -26,10 +29,10 @@ public:
 	}
 	void ClearList()
 	{
-		DuLNode<T> * move = head->next;
+		DuLNode<T>* move = head->next;
 		while (move != last)
 		{
-			DuLNode<T> * p = move;
+			DuLNode<T>* p = move;
 			move = move->next;
 			delete p;
 		}
@@ -48,8 +51,8 @@ public:
 	T GetElement(int i)
 	{
 		int j = 1;
-		DuLNode<T> * move = head->next;
-		for (; j < i&& move != last; j++, move = move->next);
+		DuLNode<T>* move = head->next;
+		for (; j < i && move != last; j++, move = move->next);
 		if (move != last && j <= i)
 		{
 			return move->data;
@@ -59,7 +62,7 @@ public:
 	int LocateElement(T e, std::function<bool(T, T)> cmp)
 	{
 		int i = 1;
-		for (DuLNode<T> * move = head->next; move != last; move = move->next, i++)
+		for (DuLNode<T>* move = head->next; move != last; move = move->next, i++)
 		{
 			if (cmp(move->data, e))
 			{
@@ -74,7 +77,7 @@ public:
 		{
 			throw "PriorDoesNotExistException";
 		}
-		for (DuLNode<T> * move = head->next; move->next != last; move = move->next)
+		for (DuLNode<T>* move = head->next; move->next != last; move = move->next)
 		{
 			if (cmp(move->next->data, e))
 			{
@@ -85,7 +88,7 @@ public:
 	}
 	T NextElement(T e, std::function<bool(T, T)> cmp)
 	{
-		for (DuLNode<T> * move = head->next; move->next != last; move = move->next)
+		for (DuLNode<T>* move = head->next; move->next != last; move = move->next)
 		{
 			if (cmp(move->data, e))
 			{
@@ -100,12 +103,12 @@ public:
 	}
 	void ListInsert(int i, T e)
 	{
-		DuLNode<T> * move = head;
+		DuLNode<T>* move = head;
 		int j;
-		for(j = 0; j < i-1 && move != last; j++, move = move->next);
-		if (move != last && j == i-1)
+		for (j = 0; j < i - 1 && move != last; j++, move = move->next);
+		if (move != last && j == i - 1)
 		{
-			DuLNode<T> * temp = new DuLNode<T>(move);
+			DuLNode<T>* temp = new DuLNode<T>(move);
 			temp->data = e;
 			temp->next = move->next;
 			move->next = temp;
@@ -117,13 +120,13 @@ public:
 	}
 	T ListDelete(int i)
 	{
-		DuLNode<T> * move = head;
+		DuLNode<T>* move = head;
 		int j = 0;
-		for (j = 0; j < i - 1 && move != last;j++, move = move->next);
+		for (j = 0; j < i - 1 && move != last; j++, move = move->next);
 		if (move->next != last && j == i - 1)//j == i - 1是为了防止输入i<=0
 			//应该判断move.next，不能删去尾节点
 		{
-			DuLNode<T> * p = move->next;
+			DuLNode<T>* p = move->next;
 			move->next = p->next;
 			p->next->prior = move;
 			T data = p->data;
@@ -136,20 +139,39 @@ public:
 	void ListTraverse(std::function<void(T)> visit)
 	{
 		cout << "head->last :";
-		for (DuLNode<T> * move = head->next; move != last; move = move->next)
+		for (DuLNode<T>* move = head->next; move != last; move = move->next)
 		{
 			visit(move->data);
 		}
 		cout << "\nlast->head :";
-		for (DuLNode<T> * move = last->prior; move != head; move = move->prior)
+		for (DuLNode<T>* move = last->prior; move != head; move = move->prior)
 		{
 			visit(move->data);
 		}
 	}
+	void homework_2_37()
+	{
+		DuLNode<T>* insert = last;
+		DuLNode<T>* end = last->prior;
+		for (DuLNode<T>* move = head->next; move != end; move = move->next)
+		{
+			DuLNode<T>* temp = move->next;
+			move->next = move->next->next;
+			move->next->prior = move;
+			temp->prior = insert->prior;
+			temp->prior->next = temp;
+			temp->next = insert;
+			insert->prior = temp;
+			insert = temp;
+			//cout << "begin :{\n";
+			//ListTraverse(print_all<T>);
+			//cout << "\n}" << endl;
+		}
+	}
 
 private:
-	DuLNode<T> * head;
-	DuLNode<T> * last;
+	DuLNode<T>* head;
+	DuLNode<T>* last;
 	int size;
 };
 #endif

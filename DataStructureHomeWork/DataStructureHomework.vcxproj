@@ -19,27 +19,36 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ADTTreeNode.h" />
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="BiTreeHelper.h" />
+    <ClInclude Include="BiTreeNode.h" />
     <ClInclude Include="CycleLinkList.h" />
     <ClInclude Include="DuLinkList.h" />
     <ClInclude Include="DuLNode.h" />
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="LinkQueue.h" />
     <ClInclude Include="LinkStack.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="LNode.h" />
+    <ClInclude Include="printable.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="SNode.h" />
     <ClInclude Include="SqList.h" />
+    <ClInclude Include="SqQueue.h" />
     <ClInclude Include="SqStack.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StaticLinkList.h" />
     <ClInclude Include="StaticLNode.h" />
     <ClInclude Include="TestSettings.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{7EC99F44-C18B-4B5B-9711-B6CD2F58922A}</ProjectGuid>
+    <ProjectGuid>{FB50CC93-B057-43F0-B186-C7793FDE6A96}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DataStructureHomework</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>

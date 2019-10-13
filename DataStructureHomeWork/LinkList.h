@@ -165,7 +165,9 @@ public:
 		}
 		throw "IndexOutOfBoundsException";
 	}
-
+    void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	void ListTraverse(std::function<void(T)> visit)
 	{
 		LNode<T>* move = head->next;

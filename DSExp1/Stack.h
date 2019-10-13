@@ -2,13 +2,13 @@
 #define MY_STACK_H
 #include <functional>
 #include <iostream>
-
+#include "printable.h"
 static const int StackInitSize = 100;
 static const int StackIncreasement = 10;
 
 
 template<class T>
-class Stack
+class Stack : public Printable<T>
 {
 public:
 	virtual void InitStack() = 0;

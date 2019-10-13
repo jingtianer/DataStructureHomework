@@ -36,7 +36,7 @@ public:
 	}
 	int StackLength()
 	{
-		
+
 		return top - base;
 	}
 	T GetTop()
@@ -49,7 +49,7 @@ public:
 		{
 			int len = StackLength();
 			T * temp = (T *) realloc(base, sizeof(T) * (StackSize + StackIncreasement));
-			if (!temp) 
+			if (!temp)
 			{
 				throw "MemeoryAllocFail";
 			}
@@ -57,7 +57,7 @@ public:
 			top = base + len;
 			StackSize += StackIncreasement;
 		}
-		
+
 		*top = e;
 		++top;
 	}
@@ -67,6 +67,9 @@ public:
 		--top;
 		return e;
 	}
+	void printAll() {
+        StackTraverse(print_all<T>);
+    }
 	void StackTraverse(std::function<void(T)> visit)
 	{
 		for (T * move = top - 1; move >= base; --move)

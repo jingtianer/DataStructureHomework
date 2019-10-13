@@ -48,7 +48,7 @@ public:
 	int head()
 	{
 		return 0;
-		
+
 	}
 	int next(int i)
 	{
@@ -136,7 +136,7 @@ public:
 				{
 					throw "Memory Alloc Fail";
 				}
-				
+
 				for (int j = 0; j <= length; j++)
 				{
 					temp[j] = elem[j];
@@ -149,16 +149,16 @@ public:
 				ListSize += ListIncreasement;
 				delete []elem;
 				elem = temp;
-				
+
 			}
-			
+
 			int temp = Space;
 			Space = elem[Space].cur;
 			elem[temp].data = e;
 			elem[temp].cur = elem[move].cur;
 			elem[move].cur = temp;
 			length++;
-			
+
 			return;
 		}
 		throw "IndexOutOfBoundsException";
@@ -180,12 +180,15 @@ public:
 			//free
 			elem[temp].cur = Space;
 			Space = temp;
-			
+
 			length--;
 			return e;
 		}
 		throw "IndexOutOfBoundsException";
 	}
+	void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	void ListTraverse(std::function<void(T)> visit)
 	{
 		for (int move = next(head()); !isNull(move); move = next(move))

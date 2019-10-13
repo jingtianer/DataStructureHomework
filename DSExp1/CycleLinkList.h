@@ -96,6 +96,9 @@ public:
 		}
 		throw "ElementNotFoundException";
 	}
+	void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	T NextElement(T e, std::function<bool(T, T)> cmp)
 	{
 		LNode<T> *move = head()->next;

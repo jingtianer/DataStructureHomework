@@ -3,21 +3,11 @@
 #include <cstdlib>
 #include <functional>
 #include <iostream>
+#include "printable.h"
 static const int ListInitSize = 100;
 static const int ListIncreasement = 10;
 template <class T>
-void print_all(T x) { std::cout << x << " "; }
-
-template <class T>
-bool equals (T i, T j){ return i == j; }
-
-template <class T>
-bool Greater(T i, T j){ return i > j; };
-template <class T>
-bool Smaller(T i, T j){ return i < j; };
-
-template <class T>
-class list
+class list: public Printable<T>
 {
 public:
 	virtual ~list()

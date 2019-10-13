@@ -117,13 +117,20 @@ public:
 		{
 			throw "ArrayIndexOutOfBoundsException";
 		}
-		T* temp;
+		T* temp = nullptr;
 		if (Length >= ListSize)
-		{ 
+		{
+			/*T * temp = elem;
+			elem = new T[ListSize + ListIncreasement];
+			for (int i = 0; i < ListSize; i++)
+			{
+				elem[i] = temp[i];
+			}
+			delete []temp;*/
 			temp = static_cast<T*>(realloc(elem, sizeof(T) * (ListSize + ListIncreasement)));
 			if (!temp)
 			{
-				throw "ReallocFailException";
+				throw "ReallocFailException, Data lost";
 			}
 			elem = temp;
 			ListSize += ListIncreasement;
@@ -205,6 +212,9 @@ public:
 		return *list;
 	}
 
+	void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	void ListTraverse(std::function<void(T x)> visit)
 	{
 		for (int i = 0; i < Length; i++)
@@ -263,22 +273,6 @@ public:
 			*lc++ = *lb++;
 		}
 		return *list;
-	}
-	void Delete(std::function<bool(T x)> condition)
-	{
-		T * temp = new T[ListSize];
-		T* move = temp;
-		for (int i = 0; i < Length; i++)
-		{
-			if (!condition(elem[i]))
-			{
-				*move = elem[i];
-				++move;
-			}
-		}
-		Length = move - temp;
-		delete elem;
-		elem = temp;
 	}
 
 private:

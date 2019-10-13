@@ -212,6 +212,9 @@ public:
 		return *list;
 	}
 
+	void printAll() {
+        ListTraverse(print_all<T>);
+    }
 	void ListTraverse(std::function<void(T x)> visit)
 	{
 		for (int i = 0; i < Length; i++)

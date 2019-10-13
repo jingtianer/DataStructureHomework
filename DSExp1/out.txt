@@ -1,0 +1,24 @@
+
+------MonkeyPeach_Test------
+一共5个小猴子，篮子里一次性最多放8个桃子，每个小猴子要拿15个桃子
+小猴子的出队序列
+begin :{
+
+id = 3 peach = 15 
+id = 1 peach = 15 
+id = 2 peach = 15 
+id = 4 peach = 15 
+id = 5 peach = 15 
+}
+一共7个小猴子，篮子里一次性最多放5个桃子，每个小猴子要拿5个桃子
+小猴子的出队序列
+begin :{
+
+id = 5 peach = 5 
+id = 2 peach = 5 
+id = 4 peach = 5 
+id = 6 peach = 5 
+id = 1 peach = 5 
+id = 3 peach = 5 
+id = 7 peach = 5 
+}

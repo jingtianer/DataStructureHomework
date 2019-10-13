@@ -2,23 +2,31 @@
 #define MY_TEST_SETTINGS_H
 #include <iostream>
 #include <fstream>
+#include "SqList.h"
+#include "LinkList.h"
+#include "CycleLinkList.h"
+#include "DuLinkList.h"
+#include "StaticLinkList.h"
+#include "SqStack.h"
+#include<sstream>
+#include<functional>
+#include"printable.h"
+#include"queue.h"
+#include"SqQueue.h"
+#include"LinkQueue.h"
+#include"Array.h"
+#include"BiTreeNode.h"
+#include"BiTreeHelper.h"
 using namespace std;
-/**
- * \brief 测试章节大类，注释掉想测试的章节，只能注释一个
- */
-//#define NOT_TEST_LIST
-#define NOT_TEST_STACK
-/**
- * \brief 测试数据是否写入文件
- */
-//#define WRITE_TO_FILE
-/**
- * \brief 测试数据量（150较合理）
- */
-const int TEST_SIZE = 150;
-
 streambuf* coutBuf = nullptr;
-ofstream * of = nullptr;
+ofstream* of = nullptr;
+const int TEST_SIZE = 500;
+#define NOT_TEST_LIST
+#define NOT_TEST_STACK
+#define NOT_TEST_HOMEWORK_2_37
+#define NOT_TEST_QUEUE
+#define NOT_TEST_ARRAY
+//#define NOT_TEST_TREE
 void WriteToFile()
 {
 	coutBuf = cout.rdbuf();
@@ -31,9 +39,16 @@ void WriteToFile()
 void RecoverCOUT()
 {
 	of->flush();
-    of->close();
+	of->close();
 	cout.flush();
 	cout.rdbuf(coutBuf);
 	system("out.txt");
+}
+
+template<class T>
+void print(Printable<T>* l) {
+	cout << "begin :{\n";
+	l->printAll();
+	cout << "\n}\n";
 }
 #endif

@@ -74,6 +74,9 @@ public:
 		Length--;
 		return e;
 	}
+	void printAll() {
+        StackTraverse(print_all<T>);
+    }
 	void StackTraverse(std::function<void(T)> visit)
 	{
 		std::cout << "bottom->top :";

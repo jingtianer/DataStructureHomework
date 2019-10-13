@@ -82,6 +82,10 @@ struct joseph
     joseph()
     {
     }
+    friend ostream& operator<<(ostream& file, joseph& j)
+    {
+        file << "code = " <<  j.code << "\npos = " << j.pos << endl;
+    }
 };
 void print_joseph(joseph x)
 {
@@ -219,26 +223,61 @@ void EvaluateExpression(string& s)
     char isOption[128] = {0};
     string option = "+-*/()#";
     int opMap[128][128] = {0};
-    opMap['+']['+'] = big;opMap['+']['-'] = big;opMap['+'][')'] = big;opMap['+']['#'] = big;
-    opMap['+']['*'] = small;opMap['+']['/'] = small;opMap['+']['('] = small;
+    opMap['+']['+'] = big;
+    opMap['+']['-'] = big;
+    opMap['+'][')'] = big;
+    opMap['+']['#'] = big;
+    opMap['+']['*'] = small;
+    opMap['+']['/'] = small;
+    opMap['+']['('] = small;
 
-    opMap['-']['+'] = big;opMap['-']['-'] = big;opMap['-'][')'] = big;opMap['-']['#'] = big;
-    opMap['-']['*'] = small;opMap['-']['/'] = small;opMap['-']['('] = small;
+    opMap['-']['+'] = big;
+    opMap['-']['-'] = big;
+    opMap['-'][')'] = big;
+    opMap['-']['#'] = big;
+    opMap['-']['*'] = small;
+    opMap['-']['/'] = small;
+    opMap['-']['('] = small;
 
-    opMap['*']['+'] = big;opMap['*']['-'] = big;opMap['*']['*'] = big;opMap['*']['/'] = big;
-    opMap['*']['('] = small;opMap['*'][')'] = big;opMap['*']['#'] = big;
+    opMap['*']['+'] = big;
+    opMap['*']['-'] = big;
+    opMap['*']['*'] = big;
+    opMap['*']['/'] = big;
+    opMap['*']['('] = small;
+    opMap['*'][')'] = big;
+    opMap['*']['#'] = big;
 
-    opMap['/']['+'] = big;opMap['/']['-'] = big;opMap['/']['*'] = big;opMap['/']['/'] = big;
-    opMap['/']['('] = small;opMap['/'][')'] = big;opMap['/']['#'] = big;
+    opMap['/']['+'] = big;
+    opMap['/']['-'] = big;
+    opMap['/']['*'] = big;
+    opMap['/']['/'] = big;
+    opMap['/']['('] = small;
+    opMap['/'][')'] = big;
+    opMap['/']['#'] = big;
 
-    opMap['(']['+'] = small;opMap['(']['-'] = small;opMap['(']['*'] = small;opMap['(']['/'] = small;
-    opMap['(']['('] = small;opMap['('][')'] = same;opMap['(']['#'] = error;
+    opMap['(']['+'] = small;
+    opMap['(']['-'] = small;
+    opMap['(']['*'] = small;
+    opMap['(']['/'] = small;
+    opMap['(']['('] = small;
+    opMap['('][')'] = same;
+    opMap['(']['#'] = error;
 
-    opMap[')']['+'] = big;opMap[')']['-'] = big;opMap[')']['*'] = big;opMap[')']['/'] = big;
-    opMap[')']['('] = error;opMap[')'][')'] = big;opMap[')']['#'] = big;
+    opMap[')']['+'] = big;
+    opMap[')']['-'] = big;
+    opMap[')']['*'] = big;
+    opMap[')']['/'] = big;
+    opMap[')']['('] = error;
+    opMap[')'][')'] = big;
+    opMap[')']['#'] = big;
 
-    opMap['#']['+'] = small;opMap['#']['-'] = small;opMap['#']['*'] = small;opMap['#']['/'] = small;
-    opMap['#']['('] = small;opMap['#'][')'] = error;opMap['#']['#'] = same;
+    opMap['#']['+'] = small;
+    opMap['#']['-'] = small;
+    opMap['#']['*'] = small;
+    opMap['#']['/'] = small;
+    opMap['#']['('] = small;
+    opMap['#'][')'] = error;
+    opMap['#']['#'] = same;
     for(int i = 0; i < 7; i++)
     {
         isOption[option[i]] = 1;
@@ -259,7 +298,8 @@ void EvaluateExpression(string& s)
         if(!isOption[s[i]])
         {
             string num;
-            while(!isOption[s[i]] || s[i] == '.') {
+            while(!isOption[s[i]] || s[i] == '.')
+            {
                 num.push_back(s[i]);
                 i++;
             }
@@ -303,20 +343,127 @@ void BRACKETSMATCH_TEST()
     }
 }
 
-void EVALUATE_EXPRESSION_TEST() {
-    vector<string> test = {"#6/2+7-4*(8-6)#" ,"#5+7-8*7/(5-5*2)#", "#15.7+78-4*(96-25)#"};
+void EVALUATE_EXPRESSION_TEST()
+{
+    vector<string> test = {"#6/2+7-4*(8-6)#","#5+7-8*7/(5-5*2)#", "#15.7+78-4*(96-25)#"};
     int len = test.size();
     for(int i = 0; i < len; i++)
     {
         EvaluateExpression(test[i]);
     }
 }
+void Palindrome_Test(string& str)
+{
+    SqQueue<char> q;
+    SqStack<char> s;
+    cout << str << " ";
+    for(char c : str)
+    {
+        q.EnQueue(c);
+        s.Push(c);
+    }
+    while(!q.QueueEmpty())
+    {
+        char a = q.DeQueue();
+        char b = s.Pop();
+        if(a != b)
+        {
+            cout << "is not a Palindrome" << endl;
+            return;
+        }
+    }
+    cout << "is a Palindrome" << endl;
+}
+void Palindrome_Test()
+{
+    string s = "123456";
+    Palindrome_Test(s);
+    s = "abcdcba";
+    Palindrome_Test(s);
+}
+struct monkey
+{
+    int id;
+    int peach;
+    monkey(int id)
+    {
+        this->id = id;
+        peach = 0;
+    }
+    monkey()
+    {
+        id = 0;
+        peach = 0;
+    }
+    friend ostream& operator<<(ostream& file, monkey& j)
+    {
+        file << "\nid = " <<  j.id << " peach = " << j.peach;
+    }
+    /*monkey(monkey& m) {
+        this->id = m.id;
+        this->peach = m.peach;
+    }*/
+};
+//#define Monkey_Process
+void MonkeyPeach_Test(int n, int k, int m)
+{
+    cout << "一共" << n << "个小猴子，篮子里一次性最多放" << k << "个桃子，每个小猴子要拿" << m << "个桃子" << endl;
+    LinkQueue<monkey> q;
+    for(int i = 0; i < n; i++)
+    {
+        monkey mky(i + 1);
+        q.EnQueue(mky);
+    }
+    int curBlanket = 0;
+    int temp_k = 0;
+    SqList<monkey> l;
+#ifdef Monkey_Process
+    cout << "初始化猴子队列" << endl;
+    print(&q);
+#endif // Monkey_Process
+    while(!q.QueueEmpty())
+    {
+        if(curBlanket == 0)
+        {
+            temp_k = temp_k%k + 1;
+            curBlanket = temp_k;
+        }
+#ifdef Monkey_Process
+        cout << "拿桃子前，剩余：" << curBlanket << endl;
+#endif // Monkey_Process
+        monkey temp = q.GetHead();
+        int need = m-temp.peach;
+        int sub = need > curBlanket ? curBlanket : need;
+        temp.peach += sub;
+        curBlanket -= sub;
+        q.DeQueue();
+        if(!(m - temp.peach))
+        {
+            l.ListInsert(l.ListLength() + 1, temp);
+        }
+        else
+        {
+            q.EnQueue(temp);
+        }
+#ifdef Monkey_Process
+        print(&q);
+        cout << "拿桃子后，剩余：" << curBlanket << endl;
+#endif // Monkey_Process
+    }
+    cout << "小猴子的出队序列" << endl;
+    print(&l);
+}
+void MonkeyPeach_Test()
+{
+    MonkeyPeach_Test(5,8,15);
+    MonkeyPeach_Test(7,5,5);
+}
 int main()
 {
-    //cout << "-----ALPHANET_TEST-----\n";
-    //AlphabetTest();
-    //cout << "\n------JOSEPH_TEST------\n";
-    //josephTest();
+    /*cout << "-----ALPHANET_TEST-----\n";
+    AlphabetTest();
+    cout << "\n------JOSEPH_TEST------\n";
+    josephTest();
     cout << "\n------CONVERSION_TEST------\n";
     convertion(1,2);
     convertion(2,2);
@@ -330,6 +477,12 @@ int main()
         EVALUATE_EXPRESSION_TEST();
     } catch(const char *s) {
         cout << s << endl;
-    }
+    }*/
+    cout << "\n------Palindrome_Test------\n";
+    Palindrome_Test();
+    WriteToFile();
+    cout << "\n------MonkeyPeach_Test------\n";
+    MonkeyPeach_Test();
+    RecoverCOUT();
     return 0;
 }
