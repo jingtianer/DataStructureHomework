@@ -24,6 +24,8 @@
   <ItemGroup>
     <ClInclude Include="ADTTreeNode.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="BiThrNode.h" />
+    <ClInclude Include="BiThrTreeHelper.h" />
     <ClInclude Include="BiTreeHelper.h" />
     <ClInclude Include="BiTreeNode.h" />
     <ClInclude Include="CycleLinkList.h" />
@@ -43,6 +45,7 @@
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StaticLinkList.h" />
     <ClInclude Include="StaticLNode.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="TestSettings.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>

@@ -507,8 +507,31 @@ int main() {
 
 int main() {
 	BiTreeHelper<int> tree;
-	BiTreeNode<int> *& root = tree.Root();
+	BiTreeNode<int> * root = tree.Root();
 	BiTreeNode<int>* temp = root;
+	root->Assign(-1);
+	temp->Left() = new BiTreeNode<int>(temp, 1);
+	temp->Right() = new BiTreeNode<int>(temp, 2);
+	temp = temp->Left();
+	temp->Left() = new BiTreeNode<int>(temp, 3);
+	temp->Right() = new BiTreeNode<int>(temp, 4);
+	temp = tree.Root()->Right();
+	temp->Left() = new BiTreeNode<int>(temp, 5);
+	temp->Right() = new BiTreeNode<int>(temp, 6);
+	tree.PreOrderTraverse(BiTreeHelper<int>::print_all);
+	cout << endl;
+	tree.InOrderTraverse(BiTreeHelper<int>::print_all);
+	cout << endl;
+	tree.PostOrderTraverse(BiTreeHelper<int>::print_all);
+	cout << "\nleft  " << tree.LeftSibling(root->Left())->Value();
+	cout << "\nright " << tree.RightSibling(root->Left())->Value() << endl;
+
+	cout << "clear all\n";
+	tree.ClearTree();
+	cout << "----------------------\n";
+
+	root = tree.Root();
+	temp = root;
 	root->Assign(-1);
 	temp->Left() = new BiTreeNode<int>(temp, 1);
 	temp->Right() = new BiTreeNode<int>(temp, 2);
@@ -529,3 +552,25 @@ int main() {
 	return 0;
 }
 #endif // !NOT_TEST_TREE
+
+#ifndef NOT_TEST_STRING
+void String_Test(const string& d, const string& s, const string& t) {
+	cout << "在字符串 (" << d << ")\n"
+		<< "把所有   (" << s << ")\n"
+		<< "替换为   (" << t << ")" << endl;
+	String myStr(d);
+	myStr.Replace(s, t);
+	cout << "result : " << myStr.StrCopy() << endl;
+}
+void String_Test() {
+	string a = "abcdefghijkabcdefghijkabcdefghijkabcdefghijk", b = "def", c = "^_^";
+	String_Test(a, b, c);
+	a = "****^_^****"; b = "*"; c = "O_o";
+	String_Test(a, b, c);
+}
+int main() {
+	String_Test();
+	return 0;
+}
+#endif // !NOT_TEST_STRING
+

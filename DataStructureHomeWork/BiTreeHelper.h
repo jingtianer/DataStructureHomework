@@ -31,6 +31,8 @@ public :
 	}
 	void ClearTree() { 
 		PostOrderTraverse(DeleteNode);
+		this->root->Child(BiTreeNode<T>::LEFT) = nullptr;
+		this->root->Child(BiTreeNode<T>::RIGHT) = nullptr;
 	}
 	bool TreeEmpty(){
 		return root->Left() == nullptr;
@@ -133,7 +135,6 @@ public :
 		cout << e->Value() << " ";
 	}
 	static void DeleteNode(N* node) {
-		cout << node->Value() << " delete \n";
 		delete node;
 	}
 private:

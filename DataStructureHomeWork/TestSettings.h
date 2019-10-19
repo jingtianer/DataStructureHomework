@@ -17,6 +17,7 @@
 #include"Array.h"
 #include"BiTreeNode.h"
 #include"BiTreeHelper.h"
+#include"String.h"
 using namespace std;
 streambuf* coutBuf = nullptr;
 ofstream* of = nullptr;
@@ -26,6 +27,7 @@ const int TEST_SIZE = 500;
 #define NOT_TEST_HOMEWORK_2_37
 #define NOT_TEST_QUEUE
 #define NOT_TEST_ARRAY
+#define NOT_TEST_STRING
 //#define NOT_TEST_TREE
 void WriteToFile()
 {

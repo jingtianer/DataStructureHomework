@@ -18,7 +18,7 @@ public:
 	T Value(){
 		return data;
 	}
-	void Assign(T e){
+	void Assign(const T& e) {
 		data = e;
 	}
 	BiTreeNode<T>*& Left() {
@@ -44,12 +44,12 @@ public:
 		return parent;
 	}
 
-	void DeleteChild(BiTreeNode<T>* node, int degree) {
+	void DeleteChild(int degree) {
 	}
 	void InsertChild(BiTreeNode<T>* node, int degree) {
 	}
 
-private:
+public:
 	BiTreeNode<T>* left;
 	BiTreeNode<T>* right;
 	BiTreeNode<T>* parent;

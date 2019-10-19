@@ -89,5 +89,14 @@
     <ClInclude Include="BiTreeHelper.h">
       <Filter>资源文件</Filter>
     </ClInclude>
+    <ClInclude Include="BiThrNode.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BiThrTreeHelper.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

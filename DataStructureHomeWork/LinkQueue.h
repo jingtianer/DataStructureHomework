@@ -28,7 +28,7 @@ public:
 		{
 			QNode* del = temp;
 			temp = temp->next;
-			delete del;
+			delete temp;
 		}
 		delete head;
 		head = nullptr;

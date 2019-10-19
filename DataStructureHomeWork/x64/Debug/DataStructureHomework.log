@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+E:\programming\东秦\DSExp\DataStructureHomework\String.h(43,1): warning C4267:  “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\programming\东秦\DSExp\DataStructureHomework\String.h(72,1): warning C4267:  “return”: 从“size_t”转换到“int”，可能丢失数据
   DataStructureHomework.vcxproj -> E:\programming\东秦\DSExp\DataStructureHomework\x64\Debug\DataStructureHomework.exe

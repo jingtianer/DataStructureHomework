@@ -42,10 +42,10 @@
 
 1568542611 c:\users\user\desktop\dsexp1\staticlnode.h
 
-1570624966 source:e:\programming\东秦\dsexp\dsexp1\main.cpp
+1571470344 source:e:\programming\东秦\dsexp\dsexp1\main.cpp
 	"TestSettings.h"
 
-1569845936 e:\programming\东秦\dsexp\dsexp1\testsettings.h
+1571464030 e:\programming\东秦\dsexp\dsexp1\testsettings.h
 	<iostream>
 	<fstream>
 	"SqList.h"
@@ -60,6 +60,8 @@
 	"queue.h"
 	"SqQueue.h"
 	"LinkQueue.h"
+	"TriMatrix.h"
+	"String.h"
 
 1569844970 e:\programming\东秦\dsexp\dsexp1\sqlist.h
 	"List.h"
@@ -165,4 +167,12 @@
 1569847302 e:\programming\东秦\dsexp\dsexp1\linkqueue.h
 	"queue.h"
 	"LNode.h"
+
+1571469788 e:\programming\东秦\dsexp\dsexp1\trimatrix.h
+	"printable.h"
+	<vector>
+	<unordered_map>
+
+1571470208 e:\programming\东秦\dsexp\dsexp1\string.h
+	<string>
 

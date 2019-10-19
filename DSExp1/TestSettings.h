@@ -14,6 +14,9 @@
 #include"queue.h"
 #include"SqQueue.h"
 #include"LinkQueue.h"
+#include"TriMatrix.h"
+#include"String.h"
+
 using namespace std;
 streambuf* coutBuf = nullptr;
 ofstream* of = nullptr;

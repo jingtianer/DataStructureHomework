@@ -47,7 +47,11 @@
 		<Unit filename="Stack.h" />
 		<Unit filename="StaticLNode.h" />
 		<Unit filename="StaticLinkList.h" />
+		<Unit filename="String.h" />
 		<Unit filename="TestSettings.h" />
+		<Unit filename="TriMatrix.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

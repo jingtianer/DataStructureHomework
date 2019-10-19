@@ -458,6 +458,40 @@ void MonkeyPeach_Test()
     MonkeyPeach_Test(5,8,15);
     MonkeyPeach_Test(7,5,5);
 }
+
+void TriMatrix_Test(const vector<vector<int>>& va, const vector<vector<int>>& vb)
+{
+    TriMatrix<int> a(va);
+    TriMatrix<int> b(vb);
+    cout << "A:";
+    print(&a);
+    cout << "B:";
+    print(&b);
+
+    a.Reverse();
+    b.Reverse();
+
+    cout << "AB转置\n";
+    cout << "A:";
+    print(&a);
+    cout << "B:";
+    print(&b);
+
+    TriMatrix<int> c = TriMatrix<int>::add(a,b);
+
+    cout << "A + B:";
+    print(&c);;
+    system("pause");
+
+}
+void String_Test(const string& d, const string& s, const string& t) {
+    cout << "在字符串 \"" << d << "\"\n"
+         << "把所有   \"" << s << "\"\n"
+         << "替换为   \"" << t  << "\""<< endl;
+    String myStr(d);
+    myStr.Replace(s, t);
+    cout << "result : " << myStr.StrCopy() << endl << "\n";
+}
 int main()
 {
     /*cout << "-----ALPHANET_TEST-----\n";
@@ -478,11 +512,33 @@ int main()
     } catch(const char *s) {
         cout << s << endl;
     }*/
-    cout << "\n------Palindrome_Test------\n";
+    /*cout << "\n------Palindrome_Test------\n";
     Palindrome_Test();
     WriteToFile();
     cout << "\n------MonkeyPeach_Test------\n";
     MonkeyPeach_Test();
-    RecoverCOUT();
+    RecoverCOUT();*/
+/*
+    1 0 0
+    5 0 0
+    0 0 0
+    2 10 0
+    0 0 0
+    0 0 0
+    1 2 3
+    4 5 6
+    7 8 9
+    10 11 12
+    13 14 15
+    16 17 18
+*/
+    cout << "\n------TriMatrix_Test------\n";
+    TriMatrix_Test({{1,0,0},{5,0,0},{0,0,0}}, {{2,10,0},{0,0,0},{0,0,0}});
+    TriMatrix_Test({{1,2,3},{4,5,6},{7,8,9}}, {{10,11,12},{13,14,15},{16,17,18}});
+
+    cout << "\n------String_Test------\n";
+	String_Test("ack1234567hijack1234567hijack1234567hijack1234567hij", "1234567", "(^_^)!!");
+	String_Test("||||O_o||||", "|", "(>_<)");
+	String_Test("ast12345678910Toast12345678910Toast12345678910To", "12345678910", "(>_<)!");
     return 0;
 }
